@@ -1,0 +1,255 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --ink: #17181c;
+  --ink-soft: #24262b;
+  --paper: #ece7dd;
+  --paper-dim: #dcd6c9;
+  --red: #d93b2b;
+  --blue: #2f6690;
+  --green: #3f7d4f;
+  --gold: #c99a3a;
+  --line: rgba(255, 255, 255, 0.14);
+  --line-dark: rgba(23, 24, 28, 0.14);
+
+  --font-display: "Anton", "Arial Narrow", sans-serif;
+  --font-body: "Work Sans", "Segoe UI", sans-serif;
+
+  --radius: 6px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 2px;
+}
+
+h1, h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+.header {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 1.5rem clamp(1.25rem, 5vw, 4rem);
+}
+
+.header h1 {
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  color: var(--paper);
+}
+
+.nav-1 {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  margin: 1.25rem 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+  padding-top: 0.9rem;
+}
+
+.nav-1 li a {
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--paper);
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.nav-1 li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.nav-1 li a:hover::after,
+.nav-1 li a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+
+main {
+  padding: 3rem clamp(1.25rem, 5vw, 4rem) 4rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+main > h1 {
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  text-transform: uppercase;
+}
+
+.header-1 {
+  color: var(--ink-soft);
+  max-width: 55ch;
+  margin-top: 0.75rem;
+  font-size: 1.05rem;
+}
+
+
+main h2 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 3.5rem;
+}
+
+main h2::before {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--paper);
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.section-heading-1 {
+  color: var(--blue);
+}
+.section-heading-1::before {
+  content: "01";
+  background: var(--blue);
+}
+
+.section-heading-2 {
+  color: var(--green);
+}
+.section-heading-2::before {
+  content: "02";
+  background: var(--green);
+}
+
+.section-heading-3 {
+  color: var(--gold);
+}
+.section-heading-3::before {
+  content: "03";
+  background: var(--gold);
+}
+
+main h2 + img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 1.5rem;
+}
+
+.section-1 {
+  border-bottom: 4px solid var(--blue);
+}
+
+.section-2 {
+  border-bottom: 4px solid var(--green);
+}
+
+.section-3 {
+  border-bottom: 4px solid var(--gold);
+}
+
+main img + p {
+  margin-top: 1.25rem;
+  max-width: 65ch;
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+
+footer {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 2rem clamp(1.25rem, 5vw, 4rem);
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+.footer-content nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-content nav ul li a {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+.footer-content nav ul li a:hover {
+  opacity: 1;
+  color: var(--red);
+}
+
+
+@media (max-width: 640px) {
+  main h2 + img {
+    height: 220px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
